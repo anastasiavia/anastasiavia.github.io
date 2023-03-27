@@ -100,6 +100,7 @@ $pink-color: pink;
   .btn-primary {
     background-color: $primary-color;
     border-color: $primary-color;
+    
     &:hover,
     &:focus {
       background-color: darken($primary-color, 10%);
@@ -108,6 +109,7 @@ $pink-color: pink;
   }
   img {
     max-width: 100%;
+    margin-top: 5%;
   }
 }
 .featured-products {
