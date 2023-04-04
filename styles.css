@@ -49,11 +49,14 @@
 }
 .hero img {
   max-width: 100%;
-  margin-top: 5%;
 }
 
 .featured-products, .featured-products2 {
   padding: 3rem 0;
+  text-decoration: none;
+}
+.featured-products a, .featured-products2 a {
+  text-decoration: none;
 }
 .featured-products h2, .featured-products2 h2 {
   font-weight: bold;
@@ -186,14 +189,14 @@ body {
   border-color: #fff3f5;
 }
 
-.product h1 {
+.ordering h1 {
   padding: 3px;
   font-size: 30px;
   margin-top: -5px;
   position: relative;
   right: 20px;
 }
-.product input[type=number] {
+.ordering input[type=number] {
   border: 1px solid pink;
   box-shadow: 0 0 5px pink;
   width: 60px;
@@ -201,10 +204,10 @@ body {
   padding: 6px;
   margin-top: 10.5%;
 }
-.product input[type=number]:focus {
+.ordering input[type=number]:focus {
   outline: none;
 }
-.product .btn-buy-now {
+.ordering .btn-buy-now {
   font-size: 14px;
   padding: 6px 12px;
   border: none;
@@ -214,15 +217,15 @@ body {
   transition: background-color 0.3s ease;
   margin-top: 10.5%;
 }
-.product .btn-buy-now:hover {
+.ordering .btn-buy-now:hover {
   background-color: #ff8da1;
 }
-.product .btn-buy-now:active, .product .btn-buy-now:focus {
+.ordering .btn-buy-now:active, .ordering .btn-buy-now:focus {
   outline-color: #ff8da1;
   box-shadow: none;
   background-color: pink;
 }
-.product .form-group1 input[type=number] {
+.ordering .form-group1 input[type=number] {
   border: 1px solid pink;
   box-shadow: 0 0 5px pink;
   width: 60px;
@@ -230,13 +233,13 @@ body {
   padding: 6px;
   margin-top: 10.5%;
 }
-.product .form-group1 input[type=number]:focus {
+.ordering .form-group1 input[type=number]:focus {
   outline: none;
 }
-.product .form-group label {
+.ordering .form-group label {
   font-weight: bold;
 }
-.product .form-group input[type=number] {
+.ordering .form-group input[type=number] {
   border: 1px solid pink;
   box-shadow: 0 0 5px pink;
   width: 60px;
@@ -246,63 +249,64 @@ body {
   margin: 0;
   margin-left: 44%;
 }
-.product .form-group input[type=number]:focus {
+.ordering .form-group input[type=number]:focus {
   outline: none;
 }
-.product .form-group input[type=text],
-.product .form-group input[type=email],
-.product .form-group input[type=tel] {
+.ordering .form-group input[type=text],
+.ordering .form-group input[type=email],
+.ordering .form-group input[type=tel] {
   border: 1px solid pink;
   box-shadow: 0 0 5px pink;
   width: 60px;
   height: 35px;
   padding: 6px;
   margin-top: 10.5%;
-  width: 300px;
+  width: 73%;
   height: 35px;
   margin: 0;
   margin-left: 18%;
 }
-.product .form-group input[type=text]:focus,
-.product .form-group input[type=email]:focus,
-.product .form-group input[type=tel]:focus {
+.ordering .form-group input[type=text]:focus,
+.ordering .form-group input[type=email]:focus,
+.ordering .form-group input[type=tel]:focus {
   outline: none;
 }
-.product .form-group .form-control {
+.ordering .form-group .form-control {
   border: 1px solid pink;
   box-shadow: 0 0 5px pink;
   width: 60px;
   height: 35px;
   padding: 6px;
   margin-top: 10.5%;
-  width: 300px;
+  width: 73%;
   height: 150px;
   margin: 0;
   margin-left: 18%;
 }
-.product .form-group .form-control:focus {
+.ordering .form-group .form-control:focus {
   outline: none;
 }
-.product .price-col {
+.ordering .price-col {
   display: flex;
   margin: 0 auto;
   text-align: center;
   padding: 3%;
 }
-.product .btn-submit {
+.ordering .btn-submit {
   margin-top: 1rem;
   background-color: pink;
   border-color: pink;
 }
-.product .btn-submit:hover, .product .btn-submit:focus {
+.ordering .btn-submit:hover, .ordering .btn-submit:focus {
   background-color: #fff3f5;
   border-color: #fff3f5;
 }
-.product button[type=submit] {
+.ordering button[type=submit] {
   width: 120px;
   height: 35px;
+  margin-left: 40%;
 }
-.product footer {
+.ordering footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -310,4 +314,37 @@ body {
 
 .featured-products2 {
   padding: 5rem;
+  text-decoration: none;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000000;
+}
+
+.product .btn-primary {
+  font-size: 14px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: pink;
+  color: #fff;
+  transition: background-color 0.3s ease;
+  margin-left: 100%;
+  margin-top: 20%;
+}
+.product .btn-primary:hover {
+  background-color: #ff8da1;
+}
+.product .btn-primary:active, .product .btn-primary:focus {
+  outline-color: #ff8da1;
+  box-shadow: none;
+  background-color: pink;
+}
+.product h1 {
+  margin-top: 14%;
 }/*# sourceMappingURL=styles.css.map */

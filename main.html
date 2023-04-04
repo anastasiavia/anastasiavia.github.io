@@ -20,7 +20,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav  ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="#">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="productslist.html">Shop</a>
@@ -29,15 +29,20 @@
             <a class="nav-link" href="#">About</a>
           </li>
         </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+        <ul class="navbar-nav ml-auto" id="login-ul">
+          <li class="nav-item" id="login-btn">
             <a class="nav-link" href="login.html">Login</a>
-
           </li>
           <li class="nav-item">
             <a class="nav-link" href="signup.html">Sign up</a>
           </li>
         </ul>
+            <!-- <li class="nav-item">
+              <a href="main.html" class="btn btn-link text-muted" onclick="logout()"><i class="bi bi-box-arrow-right"></i></a>
+            </li> -->
+        </ul>
+       
+          
       </div>
     </nav>
     <section class="hero">
@@ -50,29 +55,29 @@
             <a href="productslist.html" class="btn btn-primary">Shop Now</a>
           </div>
           <div class="col-md-6">
-            <img src="photo1.jpg" alt="Product Image" class="img-fluid">
+            <img src="photo/photo1.jpg" alt="Product Image" class="img-fluid">
           </div>
         </div>
       </div>
     </section>
 
-    <section class="featured-products">
+    <!-- <section class="featured-products">
       <div class="container">
         <h2>Featured Products</h2>
         <div class="row">
           <div class="col-md-4">
             <div class="card mb-4">
-              <img src="photo2.jpg" alt="Product Image" class="card-img-top">
+              <img src="photo/photo2.jpg" alt="Product Image" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">Clarity skin peal</h5>
                 <p class="card-text">20.00$</p>
-                <a href="productpage.html" class="btn btn-primary">Buy Now</a>
+                <a href="photo/productpage.html" class="btn btn-primary">Buy Now</a>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card mb-4 ">
-              <img src="photo3.jpg" alt="Product Image" class="card-img-top">
+              <img src="photo/photo3.jpg" alt="Product Image" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">Mask</h5>
                 <p class="card-text">30.00$</p>
@@ -82,7 +87,7 @@
           </div>
           <div class="col-md-4">
             <div class="card mb-4 ">
-              <img src="photo4.jpg" alt="Product Image" class="card-img-top">
+              <img src="photo/photo4.jpg" alt="Product Image" class="card-img-top">
               <div class="card-body">
                 <h5 class="card-title">C-tetra set</h5>
                 <p class="card-text">50.00$</p>
@@ -93,10 +98,10 @@
         </div>
 
       </div>
-    </section>
+    </section> -->
 
   <footer>
-    <div class="container">
+    <div class="container text-center" style="margin-top: 7%; ">
       <p>&copy; 2023 Buttek. All rights reserved.</p>
     </div>
   </footer>
@@ -104,6 +109,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
