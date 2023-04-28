@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Online Shop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./app.component.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top navbar-lg">
+    <a class="navbar-brand" style="color:pink; font-size: 750;">Buttek</a>
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"  
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar = !toggleNavbar" data-toggle="collapse"
+      data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav" [ngbCollapse]="toggleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/store/inventory" routerLinkActive="active">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+      </ul>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav" [ngbCollapse]="toggleNavbar">
+      <div *ngIf="isTokenExpired$ | async">
+        <ul class="navbar-nav" id="login-ul">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cart">
+              <i class="bi bi-cart"></i>
+            </a>
+          </li>
+          <li class="nav-item" id="login-btn">
+            <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/signup" routerLinkActive="active">Sign up</a>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="!(isTokenExpired$ | async)">
+        <ul class="navbar-nav" id="login-ul">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cart">
+              <i class="bi bi-cart"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-link text-muted" (click)="logout()"><i class="bi bi-box-arrow-right"></i></a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+</body>
+
+<main style="min-height: 400px;">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="footer">
+  <div class="container" style="background-color: #f5f5f5;">
+    <div class="row ">
+      <div class="col-md-4">
+        <h4>About Us</h4>
+        <p>Welcome to our skin care shop! We are passionate about helping you achieve healthy, radiant skin. Our mission
+          is to provide you with the highest quality skin care products, carefully curated to meet your individual
+          needs.</p>
+      </div>
+      <div class="col-md-4" style="padding-left:15%">
+        <h4>Contact Us</h4>
+        <p><i class="bi bi-geo-alt-fill"></i>123 Bandery st, Lviv Ukraine</p>
+        <p><i class="bi bi-envelope-fill"></i>anastasiia@gmail.com</p>
+        <p><i class="bi bi-phone-fill"></i>(093) 555-1212</p>
+      </div>
+      <div class="col-md-4" style="padding-left:15%">
+        <h4>Follow Us</h4>
+        <a href="#"><i class="bi bi-facebook" style="margin-right: 5%;"></i></a>
+        <a href="#"><i class="bi bi-twitter" style="margin-right: 5%;"></i></a>
+        <a href="#"><i class="bi bi-instagram" style="margin-right: 5%;"></i></a>
+      </div>
+    </div>
+    <hr>
+
+  </div>
+  <!-- <div class="container justify-content-center" style="margin-top:2%">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="text-center">&copy; 2023 Buttek. All rights reserved.</p>
+      </div>
+    </div>
+  </div> -->
+</footer>

@@ -1,0 +1,19 @@
+.product .btn-primary {
+  margin-top: 1rem;
+  background-color: pink;
+  border-color: pink;
+  margin-left: 100%;
+  margin-top: 11%;
+}
+.product .btn-primary:hover, .product .btn-primary:focus {
+  background-color: #fff3f5;
+  border-color: #fff3f5;
+}
+.product h1 {
+  margin-top: 14%;
+  font-size: 250%;
+  font-weight: bold;
+}
+.product p {
+  font-size: 150%;
+}/*# sourceMappingURL=product.component.css.map */
