@@ -83,7 +83,7 @@ form.addEventListener('submit', async event => {
     .catch(error => {
       // Handle errors that occur during the request
       console.error('Error creating order:', error.message);
-      // add error message
+     
 
     });
 });
