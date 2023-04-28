@@ -1,0 +1,43 @@
+@import "//bootstrap/scss/bootstrap";
+.form-signup {
+  font-family: "Raleway", sans-serif;
+  max-width: 30%;
+  max-height: 30%;
+  margin: auto;
+  margin-top: 6.5%;
+  padding: 2%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.5rem;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+.form-signup svg {
+  position: relative;
+  left: 5%;
+}
+.form-signup .bi-person-hearts path {
+  fill: rgb(74, 64, 66);
+}
+.form-signup h1 {
+  color: rgb(74, 64, 66);
+  font-weight: 450;
+  font-size: 2rem;
+}
+.form-signup .form-group input.form-control {
+  margin-bottom: -5%;
+}
+.form-signup .form-group input.form-control:focus {
+  border-color: pink;
+  box-shadow: 0 0 0 0.2rem rgba(255, 192, 203, 0.75);
+}
+.form-signup button {
+  margin-top: 1rem;
+  background-color: pink;
+  border-color: pink;
+}
+.form-signup button:hover, .form-signup button:focus {
+  background-color: #ff8da1;
+  border-color: #ff8da1;
+}/*# sourceMappingURL=signup.component.css.map */
