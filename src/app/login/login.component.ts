@@ -37,7 +37,7 @@ export class LoginComponent {
 
     token$.toPromise().then((token: string) => {
       this._JWTTokenServiceService.setToken(token);
-      this._cartServiceService.openSnackBar("You successfully logged in!");
+      this._cartServiceService.openSnackBar("You successfully logged in! ");
       this.route.navigate(['/']);
     }).catch((error: any) => {
       this._cartServiceService.openSnackBar("Ooops! Try again ");
