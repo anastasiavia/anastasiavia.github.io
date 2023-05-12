@@ -12,18 +12,22 @@ export class AppComponent {
   title = 'store';
   toggleNavbar = true;
   public isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private intervalId: any;
 
   constructor(protected _JWTTokenServiceService: JWTTokenServiceService) { }
 
   //встановлюємо інтервал,який буде запускатись кожну секунду та перевірятимемо чи дійсний токен
   ngOnInit(): void {
-    setInterval(() => {
+    this.intervalId = setInterval(() => {
       const isExpired = this._JWTTokenServiceService.isLoggedIn();
       if (isExpired != this.isLoggedIn$.getValue()) {
         this.isLoggedIn$.next(isExpired);
       }
     }, 1000);
 
+  }
+  ngOnDestroy(): void {
+    clearInterval(this.intervalId);
   }
 
   logout() {
