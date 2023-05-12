@@ -1,0 +1,66 @@
+.cart td, .cart th {
+  border: none;
+}
+.cart input[type=number] {
+  border: 1px solid pink;
+  box-shadow: 0 0 5px pink;
+  width: 60px;
+  height: 35px;
+  padding: 6px;
+  margin-top: 10.5%;
+}
+.cart input[type=number]:focus {
+  outline: none;
+}
+.cart .cart-remove {
+  font-size: 1.5rem;
+  padding: 0;
+}
+.cart .cart-remove i {
+  transition: color 0.3s ease;
+}
+.cart .cart-remove:hover i {
+  color: pink;
+}
+.cart .cart-total {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+.cart .cart-total h4 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #6c757d;
+}
+.cart .btn-primary {
+  margin-top: 1rem;
+  background-color: pink;
+  border-color: pink;
+}
+.cart .btn-primary:hover, .cart .btn-primary:focus {
+  background-color: #fff3f5;
+  border-color: #fff3f5;
+}
+.cart .btn-submit {
+  margin-top: 1rem;
+  background-color: pink;
+  border-color: pink;
+  color: white;
+}
+.cart .btn-submit:hover, .cart .btn-submit:focus {
+  background-color: #fff3f5;
+  border-color: #fff3f5;
+}
+.cart .form-control {
+  border: 1px solid pink;
+  box-shadow: 0 0 5px pink;
+}
+.cart .form-control:focus {
+  outline: none;
+}/*# sourceMappingURL=cart.component.css.map */

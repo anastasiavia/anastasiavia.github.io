@@ -1,0 +1,24 @@
+<section class="product" style="padding-top: 7%;" *ngIf="itemDetails">
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="{{ itemDetails.image }}" alt="Product 1" class="img-fluid" id="item-image">
+        </div>
+        <div class="col-md-6">
+          <h1 id="item-title" style="margin-left: 30%;">{{ itemDetails.name }}</h1>
+          <p id="item-description" style="margin-left: 12%;">{{ itemDetails.description}}</p>
+          <div class="row">
+            <div class="col-md-4 price-col">
+              <h1 id="item-price"style="margin-left: 130%;">{{ itemDetails.price}}$</h1>
+            </div>
+            <div class="col-md-4">
+              <!-- <button type="button" class="btn btn-primary btn-buy-now" data-toggle="modal" data-target="#orderModal"
+                onClick="displayOrderForm()">
+                Buy Now
+              </button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

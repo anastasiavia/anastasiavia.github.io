@@ -1,0 +1,46 @@
+.form-signin {
+  font-family: "Raleway", sans-serif;
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  margin-top: 11%;
+}
+.form-signin svg {
+  position: relative;
+  left: 5%;
+}
+.form-signin .bi-person-hearts path {
+  fill: rgb(74, 64, 66);
+}
+.form-signin h1 {
+  color: rgb(74, 64, 66);
+  font-weight: 450;
+  font-size: 2rem;
+}
+.form-signin label:focus {
+  border-color: pink;
+  box-shadow: 0 0 0 0.2rem rgba(255, 192, 203, 0.5);
+}
+.form-signin input {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.form-signin input:focus {
+  border-color: pink;
+  box-shadow: 0 0 0 0.2rem rgba(255, 192, 203, 0.5);
+}
+.form-signin .checkbox {
+  margin-bottom: 1rem;
+}
+.form-signin .btn-login {
+  margin-top: 1rem;
+  background-color: pink;
+  border-color: pink;
+}
+.form-signin .btn-login:hover, .form-signin .btn-login:focus {
+  background-color: #ff8da1;
+  border-color: #ff8da1;
+}/*# sourceMappingURL=login.component.css.map */
