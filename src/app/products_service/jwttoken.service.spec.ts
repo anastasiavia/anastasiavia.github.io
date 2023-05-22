@@ -20,16 +20,6 @@ describe('JwttokenService', () => {
     expect(jwtService.getAccessToken()).toEqual(token);
   });
 
-  // it('should decode token', () => {
-  //   let num: number = 1516239022
-  //   const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
-  //   jwtService.setToken(token);
-  //   jwtService.decodeToken();
-  //   expect(jwtService.decodedToken['sub']).toEqual('1234567890');
-  //   expect(jwtService.decodedToken['name']).toEqual('John Doe');
-  //   expect(jwtService.decodedToken['iat']).toEqual(num.toString());
-  // });
-
   it('should not decode token if jwtToken is empty', () => {
     jwtService.decodeToken();
     expect(jwtService.decodedToken).toBeUndefined();
@@ -65,5 +55,46 @@ describe('JwttokenService', () => {
     expect(jwtService.decodedToken).toEqual({});
     expect(localStorage.getItem('token')).toBeNull();
   });
+
+
+  
+  it('should decode token if jwtToken is set', () => {
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+    jwtService.setToken(token);
+    jwtService.decodeToken();
+    
+    const decodedToken = jwtService.decodedToken;
+    expect(decodedToken).toBeTruthy(); // Check if decodedToken is truthy
+    
+    expect(decodedToken['sub']).toEqual('1234567890');
+    expect(decodedToken['name']).toEqual('John Doe');
+    expect(typeof decodedToken['iat']).toEqual('number'); // Check if iat is a number
+  });
+  
+  it('should return null when getUserId is called with empty jwtToken', () => {
+    jwtService.setToken('');
+    expect(jwtService.getUserId()).toBeNull();
+  });
+  
+  it('should return null when getUserId is called with invalid jwtToken', () => {
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+    jwtService.setToken(token);
+    expect(jwtService.getUserId()).toBe('1234567890');
+  });
+  
+  it('should return false when isLoggedIn is called with empty jwtToken', () => {
+    jwtService.setToken('');
+    expect(jwtService.isLoggedIn()).toBe(false);
+  });
+  
+  it('should return true when isLoggedIn is called with valid jwtToken', () => {
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+    jwtService.setToken(token);
+    expect(jwtService.isLoggedIn()).toBe(true);
+  });
+  
+
+  
+
 
 });

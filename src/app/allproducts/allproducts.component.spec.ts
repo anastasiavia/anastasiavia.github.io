@@ -40,6 +40,16 @@ describe('AllproductsComponent', () => {
     expect(productService.getAll).toHaveBeenCalled();
     expect(component.products).toEqual(mockProducts);
   });
-  
+
+   it('should call addToCart method on cart service when addToCartFromShop is called', () => {
+    const itemId = 1;
+    spyOn(cartService, 'addToCart');
+
+    component.addToCartFromShop(itemId);
+
+    expect(cartService.addToCart).toHaveBeenCalledWith(itemId, 1);
+  });
+
+
   
 });

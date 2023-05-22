@@ -6,7 +6,7 @@ import jwt_decode from 'jwt-decode';
 })
 export class JWTTokenServiceService {
   jwtToken: string = "";
-  decodedToken!: { [key: string]: string; };
+  public decodedToken!: { [key: string]: string; };
 
   constructor() { }
 
@@ -60,7 +60,7 @@ export class JWTTokenServiceService {
     if (this.decodedToken) {
       this.jwtToken = '';
       this.decodedToken = {};
-      localStorage.removeItem("token")
+      localStorage.removeItem('token');
     }
   }
 }

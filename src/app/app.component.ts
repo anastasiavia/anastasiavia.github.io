@@ -12,7 +12,7 @@ export class AppComponent {
   title = 'store';
   toggleNavbar = true;
   public isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  private intervalId: any;
+  public intervalId: any;
 
   constructor(protected _JWTTokenServiceService: JWTTokenServiceService) { }
 

@@ -7,7 +7,7 @@ import { CartServiceService } from '../products_service/cart-service.service';
 import { JWTTokenServiceService } from '../products_service/jwttoken.service';
 import { AuthServiceService } from '../products_service/auth-service.service';
 import { Router } from '@angular/router';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 
 describe('SignupComponent', () => {
   let component: SignupComponent;
@@ -124,46 +124,43 @@ describe('SignupComponent', () => {
     expect(_JWTTokenServiceService.setToken).toHaveBeenCalledWith(token);
   });
 
-  // it('should call the navigate method with the correct route when the form is submitted with valid data', () => {
-  //   // set up form data
-  //   const form = component.formData;
-  //   form.controls.username.setValue('johndoe');
-  //   form.controls.firstname.setValue('John');
-  //   form.controls.lastname.setValue('Doe');
-  //   form.controls.email.setValue('johndoe@example.com');
-  //   form.controls.password.setValue('password123');
-  //   form.controls.phone.setValue('1234567890');
-  
-  //   // spy on navigate method
-  //   const navigateSpy = spyOn(route, 'navigate').and.callThrough();
-  
-  //   // spy on register method and return a value
-  //   spyOn(_restClientServiceService, 'register').and.returnValue(of({ token: 'some_token' }));
-  
-  //   // call onSubmit method
-  //   component.onSubmit(form);
-  
-  //   // assert that navigate method was called with the correct route
-  //   expect(navigateSpy).toHaveBeenCalledWith(['/']);
-  // });
-  
-  
-//   it('should call the openSnackBar method with the correct message when the register method returns an error', async () => {
-//     const form = component.formData;
-//     form.controls.username.setValue('johndoe');
-//     form.controls.firstname.setValue('John');
-//     form.controls.lastname.setValue('Doe');
-//     form.controls.email.setValue('johndoe@example.com');
-//     form.controls.password.setValue('password123');
-//     form.controls.phone.setValue('1234567890');
-  
-//     const error = { error: 'some_error_message' };
-//     spyOn(_restClientServiceService, 'register').and.returnValue(await Promise.reject(error));
-  
+  it('should call openSnackBar() method with the correct error message when registration fails', fakeAsync(() => {
+    const form = component.formData;
+    form.controls.username.setValue('johndoe');
+    form.controls.firstname.setValue('John');
+    form.controls.lastname.setValue('Doe');
+    form.controls.email.setValue('johndoe@example.com');
+    form.controls.password.setValue('password123');
+    form.controls.phone.setValue('1234567890');
 
-// });
-  
+    const errorMessage = 'Error registering user';
+    spyOn(_restClientServiceService, 'register').and.returnValue(throwError({ error: errorMessage }));
 
+    component.onSubmit(form);
+    tick();
+
+    expect(_cartServiceService.openSnackBar).toHaveBeenCalledWith(`Error: ${errorMessage}`);
+  }));
+
+
+  it('should navigate to the home page after successful registration', fakeAsync(() => {
+    const form = component.formData;
+    form.controls.username.setValue('johndoe');
+    form.controls.firstname.setValue('John');
+    form.controls.lastname.setValue('Doe');
+    form.controls.email.setValue('johndoe@example.com');
+    form.controls.password.setValue('password123');
+    form.controls.phone.setValue('1234567890');
+
+    const token = 'some_token';
+    spyOn(_restClientServiceService, 'register').and.returnValue(of({ token }));
+    spyOn(_JWTTokenServiceService, 'setToken');
+
+    component.onSubmit(form);
+    tick();
+
+    expect(route.navigate).toHaveBeenCalledWith(['/']);
+  }));
 
 });
 
